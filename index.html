@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Coffee & Bistro - Hương Vị Cà Phê Nguyên Bản</title>
+  <meta name="description" content="Aura Coffee & Bistro - Điểm hẹn lý tưởng với hương vị cà phê mộc nguyên bản, không gian ấm cúng và bánh ngọt tươi mỗi ngày.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= 1. HEADER & NAVIGATION ================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-mug-hot"></i> Aura Coffee
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Trang chủ</a></li>
+          <li><a href="#about">Về chúng tôi</a></li>
+          <li><a href="#menu">Thực đơn</a></li>
+          <li><a href="#space">Không gian</a></li>
+          <li><a href="#reservation">Đặt bàn</a></li>
+          <li><a href="#location">Địa chỉ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <!-- Chuyển đổi giao diện Sáng / Tối -->
+        <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện" title="Đổi giao diện Sáng / Tối">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Nút mở giỏ hàng -->
+        <button class="icon-btn" id="cartToggleBtn" onclick="openCart()" aria-label="Xem giỏ hàng" title="Giỏ hàng">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- CTA Đặt bàn -->
+        <a href="#reservation" class="btn btn-primary header-btn">
+          <i class="fa-regular fa-calendar-check"></i> Đặt Bàn
+        </a>
+
+        <!-- Nút menu mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. HERO BANNER ================= -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-seedling"></i> 100% Cà Phê Đặc Sản Nguyên Bản
+        </div>
+        <h1 class="hero-title">
+          Hương vị cà phê <span>nguyên bản</span> & Không gian thư giãn
+        </h1>
+        <p class="hero-desc">
+          Chào mừng bạn đến với Aura Coffee & Bistro – nơi mỗi tách cà phê được pha chế bằng niềm đam mê, mang đến trải nghiệm hương vị tinh tế trong không gian ấm áp, bình yên.
+        </p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            <i class="fa-solid fa-book-open"></i> Xem Thực Đơn
+          </a>
+          <a href="#reservation" class="btn btn-outline">
+            <i class="fa-solid fa-phone-volume"></i> Đặt Bàn Ngay
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p>Hương vị thủ công</p>
+          </div>
+          <div class="stat-item">
+            <h3>10+</h3>
+            <p>Năm đồng hành</p>
+          </div>
+          <div class="stat-item">
+            <h3>98%</h3>
+            <p>Khách hàng hài lòng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. ĐIỂM NỔI BẬT (FEATURES) ================= -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-fire-burner"></i></div>
+          <h3>Rang Xay Chuẩn Mực</h3>
+          <p>Hạt cà phê Arabica & Robusta Cầu Đất được rang mộc tỉ mỉ giữ trọn vẹn hương vị tự nhiên nhất.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-couch"></i></div>
+          <h3>Không Gian Ấm Cúng</h3>
+          <p>Thiết kế hiện đại kết hợp nét mộc mạc, phù hợp làm việc, họp mặt bạn bè hay đọc sách thư giãn.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+          <h3>Bánh Tươi Mỗi Ngày</h3>
+          <p>Đa dạng các loại bánh ngọt phong cách Pháp nướng tươi tại tiệm, kết hợp hoàn hảo cùng tách cà phê.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Phục Vụ Tận Tâm</h3>
+          <p>Đội ngũ Barista chuyên nghiệp luôn sẵn sàng lắng nghe và pha chế theo đúng khẩu vị riêng của bạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. GIỚI THIỆU (ABOUT US) ================= -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <img src="assets/images/about-main.jpg" alt="Không gian pha chế cà phê Aura" class="about-img-main">
+          <img src="assets/images/about-sub.jpg" alt="Nghệ thuật pha chế Latte" class="about-img-sub">
+          <div class="about-experience-badge">
+            <strong>10+</strong>
+            <span>Năm Phục Vụ</span>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-subtitle">Câu chuyện của chúng tôi</span>
+          <h2 class="section-title">Nơi bắt đầu của những câu chuyện đẹp</h2>
+          <p class="section-desc">
+            Aura Coffee khởi nguồn từ tình yêu chân thành với từng hạt cà phê vùng cao nguyên Việt Nam. Chúng tôi tin rằng một ly cà phê ngon không chỉ đơn thuần là thức uống nạp năng lượng, mà là cầu nối cho những cuộc trò chuyện, sự sáng tạo và những khoảnh khắc lắng đọng giữa nhịp sống hối hả.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Nguyên liệu hữu cơ sạch</div>
+            <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Barista đạt chứng chỉ SCA</div>
+            <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Wifi tốc độ cao & ổ cắm riêng</div>
+            <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Không gian ngoài trời xanh mát</div>
+          </div>
+
+          <a href="#menu" class="btn btn-outline-dark">
+            <i class="fa-solid fa-arrow-right"></i> Khám Phá Thêm
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. THỰC ĐƠN (MENU HIGHLIGHTS) ================= -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Hương Vị Đặc Trưng</span>
+        <h2 class="section-title">Thực Đơn Nổi Bật</h2>
+        <p class="section-desc">Mỗi món nước và bánh đều được tạo nên từ nguyên liệu tươi ngon nhất cùng công thức độc quyền của quán.</p>
+      </div>
+
+      <!-- Công cụ tìm kiếm & Bộ lọc danh mục -->
+      <div class="menu-controls">
+        <div class="menu-search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="menuSearch" placeholder="Tìm kiếm món nước, bánh ngọt ưa thích..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-search-btn" title="Xóa tìm kiếm"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="menu-filter">
+          <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> Tất Cả</button>
+          <button class="filter-btn" data-filter="coffee"><i class="fa-solid fa-mug-hot"></i> Cà Phê</button>
+          <button class="filter-btn" data-filter="tea"><i class="fa-solid fa-leaf"></i> Trà & Nước Ép</button>
+          <button class="filter-btn" data-filter="pastry"><i class="fa-solid fa-cake-candles"></i> Bánh Ngọt</button>
+        </div>
+      </div>
+
+      <!-- Danh sách món ăn/nước uống -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Món 1 -->
+        <div class="menu-card" data-id="1" data-category="coffee" data-name="Cà Phê Muối Aura" data-price="45000">
+          <div class="menu-img-wrap" onclick="openQuickView(1)">
+            <img src="assets/images/menu-1-salt-coffee.jpg" alt="Cà Phê Muối Aura">
+            <span class="menu-tag">Best Seller</span>
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(1)">Cà Phê Muối Aura</h3>
+            <p class="menu-desc">Sự hòa quyện giữa vị đắng nhẹ của cà phê phin và lớp kem mặn béo ngậy đặc trưng.</p>
+            <div class="menu-footer">
+              <span class="menu-price">45.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(1)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 2 -->
+        <div class="menu-card" data-id="2" data-category="coffee" data-name="Caramel Macchiato" data-price="55000">
+          <div class="menu-img-wrap" onclick="openQuickView(2)">
+            <img src="assets/images/menu-2-macchiato.jpg" alt="Caramel Macchiato">
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(2)">Caramel Macchiato</h3>
+            <p class="menu-desc">Espresso đậm vị kết hợp sữa tươi đánh mịn và sốt caramel ngọt ngào quyến rũ.</p>
+            <div class="menu-footer">
+              <span class="menu-price">55.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(2)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 3 -->
+        <div class="menu-card" data-id="3" data-category="coffee" data-name="Cold Brew Cam Vàng" data-price="50000">
+          <div class="menu-img-wrap" onclick="openQuickView(3)">
+            <img src="assets/images/menu-3-cold-brew.jpg" alt="Cold Brew Cam Vàng">
+            <span class="menu-tag">Món Mới</span>
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(3)">Cold Brew Cam Vàng</h3>
+            <p class="menu-desc">Cà phê ủ lạnh 16 tiếng sảng khoái, thanh mát cùng nước ép cam vàng tươi mọng.</p>
+            <div class="menu-footer">
+              <span class="menu-price">50.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(3)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 4 -->
+        <div class="menu-card" data-id="4" data-category="tea" data-name="Trà Đào Cam Sả" data-price="48000">
+          <div class="menu-img-wrap" onclick="openQuickView(4)">
+            <img src="assets/images/menu-4-peach-tea.jpg" alt="Trà Đào Cam Sả">
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(4)">Trà Đào Cam Sả</h3>
+            <p class="menu-desc">Vị trà thanh dịu kết hợp hương thơm nồng ấm của sả tươi và miếng đào giòn ngọt.</p>
+            <div class="menu-footer">
+              <span class="menu-price">48.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(4)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 5 -->
+        <div class="menu-card" data-id="5" data-category="tea" data-name="Trà Ô Long Sen Vàng" data-price="52000">
+          <div class="menu-img-wrap" onclick="openQuickView(5)">
+            <img src="assets/images/menu-5-oolong-tea.jpg" alt="Trà Ô Long Sen Vàng">
+            <span class="menu-tag">Thanh Mát</span>
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(5)">Trà Ô Long Sen Vàng</h3>
+            <p class="menu-desc">Trà ô long thượng hạng ăn kèm hạt sen bùi ngậy và củ năng giòn ngọt thanh mát.</p>
+            <div class="menu-footer">
+              <span class="menu-price">52.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(5)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 6 -->
+        <div class="menu-card" data-id="6" data-category="pastry" data-name="Croissant Bơ Pháp" data-price="38000">
+          <div class="menu-img-wrap" onclick="openQuickView(6)">
+            <img src="assets/images/menu-6-croissant.jpg" alt="Croissant Bơ Pháp">
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(6)">Croissant Bơ Pháp</h3>
+            <p class="menu-desc">Bánh sừng bò ngàn lớp xốp giòn, thơm nức mùi bơ tự nhiên cao cấp từ Pháp.</p>
+            <div class="menu-footer">
+              <span class="menu-price">38.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(6)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 7 -->
+        <div class="menu-card" data-id="7" data-category="pastry" data-name="Tiramisu Ý Cổ Điển" data-price="58000">
+          <div class="menu-img-wrap" onclick="openQuickView(7)">
+            <img src="assets/images/menu-7-tiramisu.jpg" alt="Tiramisu Ý Cổ Điển">
+            <span class="menu-tag">Gợi Ý</span>
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(7)">Tiramisu Ý Cổ Điển</h3>
+            <p class="menu-desc">Lớp kem mascarpone mềm tan xen lẫn bánh ladyfinger thấm đẫm cà phê và rượu rum.</p>
+            <div class="menu-footer">
+              <span class="menu-price">58.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(7)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Món 8 -->
+        <div class="menu-card" data-id="8" data-category="pastry" data-name="Cheesecake Việt Quất" data-price="55000">
+          <div class="menu-img-wrap" onclick="openQuickView(8)">
+            <img src="assets/images/menu-8-cheesecake.jpg" alt="Cheesecake Việt Quất">
+            <div class="img-hint"><i class="fa-solid fa-eye"></i> Xem chi tiết</div>
+          </div>
+          <div class="menu-info">
+            <h3 class="menu-name" onclick="openQuickView(8)">Cheesecake Việt Quất</h3>
+            <p class="menu-desc">Phô mai New York béo mịn phủ sốt mứt việt quất tươi chua ngọt hài hòa.</p>
+            <div class="menu-footer">
+              <span class="menu-price">55.000đ</span>
+              <button class="btn-add-item" onclick="quickAddToCart(8)" title="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Không tìm thấy món -->
+      <div id="noResults" class="no-results" style="display: none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>Không tìm thấy món phù hợp</h3>
+        <p>Vui lòng thử tìm kiếm bằng từ khóa khác hoặc duyệt qua các tab phía trên.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. KHÔNG GIAN QUÁN (GALLERY) ================= -->
+  <section class="space-section" id="space">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Góc Nhìn Quán</span>
+        <h2 class="section-title">Không Gian Trải Nghiệm</h2>
+        <p class="section-desc">Từng góc nhỏ tại Aura đều được chăm chút kỹ lưỡng để mang đến cho bạn cảm giác thân thuộc và bình yên nhất.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item col-span-2 row-span-2">
+          <img src="assets/images/gallery-1.jpg" alt="Sảnh chính quán cafe">
+          <div class="gallery-overlay"><span>Sảnh chính sang trọng & thoáng đãng</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/gallery-2.jpg" alt="Góc làm việc yên tĩnh">
+          <div class="gallery-overlay"><span>Góc làm việc & đọc sách</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/gallery-3.jpg" alt="Quầy Bar mở">
+          <div class="gallery-overlay"><span>Quầy Bar pha chế mở</span></div>
+        </div>
+
+        <div class="gallery-item col-span-2">
+          <img src="assets/images/gallery-4.jpg" alt="Khu vực sân vườn">
+          <div class="gallery-overlay"><span>Khu vực sân vườn hòa mình cùng thiên nhiên</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. ĐẶT BÀN (RESERVATION) ================= -->
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <div class="reservation-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">Đặt Bàn Trước</span>
+          <h2 class="section-title">Giữ Chỗ Cho Khoảnh Khắc Của Bạn</h2>
+          <p class="section-desc">Đặt bàn ngay để chúng tôi chuẩn bị đón tiếp bạn và người thân chu đáo nhất.</p>
+        </div>
+
+        <form class="reservation-form" id="bookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="form-group">
+            <label for="guestName"><i class="fa-solid fa-user"></i> Họ và tên *</label>
+            <input type="text" id="guestName" placeholder="Nguyễn Văn A" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guestPhone"><i class="fa-solid fa-phone"></i> Số điện thoại *</label>
+            <input type="tel" id="guestPhone" placeholder="0901 234 567" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guestCount"><i class="fa-solid fa-users"></i> Số lượng khách *</label>
+            <select id="guestCount" required>
+              <option value="1 - 2 người">1 - 2 người</option>
+              <option value="3 - 4 người" selected>3 - 4 người</option>
+              <option value="5 - 8 người">5 - 8 người</option>
+              <option value="Trên 8 người (Đặt tiệc riêng)">Trên 8 người (Đặt tiệc riêng)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="bookDate"><i class="fa-solid fa-calendar-days"></i> Ngày đặt *</label>
+            <input type="date" id="bookDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="bookTime"><i class="fa-solid fa-clock"></i> Khung giờ *</label>
+            <select id="bookTime" required>
+              <option value="08:00 - 10:00">08:00 - 10:00</option>
+              <option value="10:00 - 12:00">10:00 - 12:00</option>
+              <option value="14:00 - 17:00">14:00 - 17:00</option>
+              <option value="18:00 - 21:00" selected>18:00 - 21:00</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tableArea"><i class="fa-solid fa-location-dot"></i> Khu vực ưu tiên</label>
+            <select id="tableArea">
+              <option value="Trong nhà (Máy lạnh)">Trong nhà (Máy lạnh)</option>
+              <option value="Ngoài trời sân vườn">Ngoài trời sân vườn</option>
+              <option value="Góc yên tĩnh làm việc">Góc yên tĩnh làm việc</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="guestNote"><i class="fa-solid fa-pen-to-square"></i> Yêu cầu đặc biệt (tùy chọn)</label>
+            <textarea id="guestNote" placeholder="Ví dụ: Ghế trẻ em, kỷ niệm sinh nhật, chuẩn bị nến thơm..."></textarea>
+          </div>
+
+          <div class="form-group full-width" style="text-align: center; margin-top: 10px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+              <i class="fa-solid fa-check"></i> Xác Nhận Đặt Bàn Ngay
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. ĐÁNH GIÁ (TESTIMONIALS) ================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Khách Hàng Nói Gì</span>
+        <h2 class="section-title">Trải Nghiệm Tại Aura</h2>
+        <p class="section-desc">Những cảm nhận chân thực từ khách hàng thân thiết là động lực lớn nhất của chúng tôi.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "Không gian ở Aura rất tuyệt vời để làm việc sáng tạo. Nhạc nhẹ nhàng vừa phải, cà phê muối béo mặn tròn vị, nhân viên lễ phép và chu đáo."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-1.jpg" alt="Khách hàng Mai Anh" class="author-avatar">
+            <div class="author-info">
+              <h4>Hoàng Mai Anh</h4>
+              <span>Nhà thiết kế đồ họa</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "Món Croissant nóng giòn kết hợp ly Latte nghệ thuật là combo yêu thích mỗi sáng cuối tuần của vợ chồng mình. Rất đáng để ghé thăm thường xuyên!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-2.jpg" alt="Khách hàng Minh Tuấn" class="author-avatar">
+            <div class="author-info">
+              <h4>Trần Minh Tuấn</h4>
+              <span>Kỹ sư phần mềm</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">
+            "Đặt bàn sinh nhật nhỏ cho nhóm bạn ở khu vườn ngoài trời, decor đèn buổi tối cực kỳ lung linh và đồ uống ra rất nhanh. Chắc chắn sẽ quay lại!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-3.jpg" alt="Khách hàng Lan Hương" class="author-avatar">
+            <div class="author-info">
+              <h4>Đặng Lan Hương</h4>
+              <span>Chuyên viên Marketing</span>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. ĐỊA CHỈ & BẢN ĐỒ (LOCATION & MAP) ================= -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Ghé Thăm Chúng Tôi</span>
+        <h2 class="section-title">Vị Trí & Không Gian Thực Tế</h2>
+        <p class="section-desc">Tọa lạc tại khu vực trung tâm sầm uất với chỗ để xe máy & ô tô thuận tiện, an ninh.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-info-card">
+          <h3>Aura Coffee & Bistro</h3>
+          <p class="loc-tagline">Điểm hẹn lý tưởng giữa lòng Sài Gòn</p>
+          
+          <ul class="loc-list">
+            <li>
+              <div class="loc-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div>
+                <strong>Địa chỉ:</strong>
+                <span>123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</span>
+              </div>
+            </li>
+            <li>
+              <div class="loc-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div>
+                <strong>Hotline đặt chỗ:</strong>
+                <span>0901 888 999 - (028) 3822 9999</span>
+              </div>
+            </li>
+            <li>
+              <div class="loc-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <strong>Thời gian mở cửa:</strong>
+                <span>07:00 - 23:00 (Tất cả các ngày trong tuần)</span>
+              </div>
+            </li>
+            <li>
+              <div class="loc-icon"><i class="fa-solid fa-square-parking"></i></div>
+              <div>
+                <strong>Tiện ích đỗ xe:</strong>
+                <span>Bãi đỗ xe máy & ô tô miễn phí có bảo vệ 24/7</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 15px;">
+            <i class="fa-solid fa-diamond-turn-right"></i> Chỉ Đường Trên Google Maps
+          </a>
+        </div>
+
+        <div class="map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5177583483984!2d106.69834167586867!3d10.771600259281747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTIzIMSQLiBMw6ogTOG7o2ksIELhur9uIE5naMOpLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bản đồ vị trí Aura Coffee">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. CHÂN TRANG (FOOTER) ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="#home" class="logo">
+            <i class="fa-solid fa-mug-hot"></i> Aura Coffee
+          </a>
+          <p class="footer-desc">
+            Không gian thưởng thức cà phê và ẩm thực nhẹ nhàng, tinh tế giữa lòng thành phố. Mang đến trải nghiệm thư thái và kết nối trọn vẹn.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên Kết Nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Về chúng tôi</a></li>
+            <li><a href="#menu">Thực đơn đặc biệt</a></li>
+            <li><a href="#space">Hình ảnh không gian</a></li>
+            <li><a href="#reservation">Đặt bàn trực tuyến</a></li>
+            <li><a href="#location">Chỉ đường ghé quán</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Giờ Mở Cửa</h4>
+          <ul class="footer-hours">
+            <li><span>Thứ Hai - Thứ Sáu:</span> <span>07:00 - 22:30</span></li>
+            <li><span>Thứ Bảy - CN:</span> <span>06:30 - 23:00</span></li>
+            <li><span>Ngày lễ / Tết:</span> <span>Mở cửa bình thường</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Thông Tin Liên Hệ</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i><span>123 Lê Lợi, P. Bến Nghé, Quận 1, TP. HCM</span></li>
+            <li><i class="fa-solid fa-phone"></i><span>0901 888 999 - (028) 3822 9999</span></li>
+            <li><i class="fa-solid fa-envelope"></i><span>contact@auracoffee.vn</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aura Coffee & Bistro. Bài tập lớn Thiết kế Web.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= 11. GIỎ HÀNG OFFCANVAS (CART DRAWER) ================= -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hàng">
+    <div class="cart-header">
+      <div class="cart-header-title">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Giỏ Hàng (<span id="cartTotalItems">0</span>)</h3>
+      </div>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Đóng giỏ hàng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Danh sách sản phẩm trong giỏ -->
+    <div class="cart-body" id="cartBody"></div>
+
+    <!-- Tổng tiền & Đặt món -->
+    <div class="cart-footer">
+      <div class="discount-box">
+        <input type="text" id="couponInput" placeholder="Nhập mã ưu đãi (VD: AURA10)">
+        <button onclick="applyCoupon()">Áp dụng</button>
+      </div>
+      <div id="couponNotice" class="coupon-notice"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Tạm tính:</span>
+          <span id="cartSubtotal">0đ</span>
+        </div>
+        <div class="summary-row" id="discountRow" style="display: none; color: #2e7d32;">
+          <span>Giảm giá (<span id="discountPercent">0%</span>):</span>
+          <span id="discountAmount">-0đ</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Tổng cộng:</span>
+          <span id="cartTotal">0đ</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-checkout" onclick="openCheckoutModal()">
+        <i class="fa-solid fa-check"></i> Đặt Món Ngay
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= 12. POPUP XEM CHI TIẾT MÓN (QUICK VIEW) ================= -->
+  <div class="modal-backdrop" id="quickViewBackdrop" onclick="closeQuickView()"></div>
+  <div class="modal quick-view-modal" id="quickViewModal" role="dialog" aria-modal="true">
+    <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Đóng modal"><i class="fa-solid fa-xmark"></i></button>
+    <div class="quick-view-grid">
+      <div class="quick-view-img">
+        <img id="qvImage" src="" alt="Ảnh món ăn">
+      </div>
+      <div class="quick-view-info">
+        <span class="qv-category" id="qvCategory">Cà Phê</span>
+        <h2 class="qv-title" id="qvTitle">Tên Món</h2>
+        <div class="qv-price" id="qvPrice">0đ</div>
+        <p class="qv-desc" id="qvDesc">Mô tả món ăn chi tiết.</p>
+
+        <!-- Lựa chọn kích cỡ và độ ngọt/đá -->
+        <div class="qv-options" id="qvOptions">
+          <div class="option-group" id="optSizeGroup">
+            <label class="option-label">Chọn kích cỡ (Size):</label>
+            <div class="pill-options">
+              <label><input type="radio" name="qvSize" value="Nhỏ (S)" data-extra="0" checked onchange="updateQvPrice()"><span>Nhỏ (S)</span></label>
+              <label><input type="radio" name="qvSize" value="Vừa (M)" data-extra="6000" onchange="updateQvPrice()"><span>Vừa (M) +6k</span></label>
+              <label><input type="radio" name="qvSize" value="Lớn (L)" data-extra="12000" onchange="updateQvPrice()"><span>Lớn (L) +12k</span></label>
+            </div>
+          </div>
+
+          <div class="option-group" id="optSweetGroup">
+            <label class="option-label">Lượng đường:</label>
+            <div class="pill-options">
+              <label><input type="radio" name="qvSweet" value="100%" checked><span>100%</span></label>
+              <label><input type="radio" name="qvSweet" value="70%"><span>70%</span></label>
+              <label><input type="radio" name="qvSweet" value="50%"><span>50%</span></label>
+              <label><input type="radio" name="qvSweet" value="0%"><span>0%</span></label>
+            </div>
+          </div>
+
+          <div class="option-group" id="optIceGroup">
+            <label class="option-label">Lượng đá:</label>
+            <div class="pill-options">
+              <label><input type="radio" name="qvIce" value="100% đá" checked><span>100%</span></label>
+              <label><input type="radio" name="qvIce" value="50% đá"><span>50%</span></label>
+              <label><input type="radio" name="qvIce" value="Đá riêng"><span>Đá riêng</span></label>
+              <label><input type="radio" name="qvIce" value="Nóng"><span>Nóng</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tăng giảm số lượng & Thêm vào giỏ -->
+        <div class="qv-action">
+          <div class="quantity-controller">
+            <button onclick="decrementQvQty()"><i class="fa-solid fa-minus"></i></button>
+            <span id="qvQtyDisplay">1</span>
+            <button onclick="incrementQvQty()"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <button class="btn btn-primary qv-add-btn" onclick="addQvToCart()">
+            <i class="fa-solid fa-bag-shopping"></i> Thêm Vào Giỏ - <span id="qvFinalPrice">0đ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 13. XÁC NHẬN ĐẶT MÓN (CHECKOUT MODAL) ================= -->
+  <div class="modal-backdrop" id="checkoutBackdrop" onclick="closeCheckoutModal()"></div>
+  <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true">
+    <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Đóng modal"><i class="fa-solid fa-xmark"></i></button>
+    <div class="checkout-content">
+      <div class="section-header" style="margin-bottom: 22px;">
+        <span class="section-subtitle">Xác Nhận Đặt Món</span>
+        <h2 class="section-title" style="font-size: 1.8rem;">Thông Tin Nhận Món</h2>
+      </div>
+
+      <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+        <div class="checkout-fields">
+          <div class="form-group">
+            <label><i class="fa-solid fa-user"></i> Họ tên người nhận *</label>
+            <input type="text" id="orderCustomerName" placeholder="Ví dụ: Lê Thị Mai" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-phone"></i> Số điện thoại liên hệ *</label>
+            <input type="tel" id="orderCustomerPhone" placeholder="0901 xxx xxx" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label><i class="fa-solid fa-shop"></i> Hình thức phục vụ *</label>
+            <select id="orderServiceType" onchange="toggleOrderAddress(this.value)">
+              <option value="dine-in">Dùng tại quán (Nhập số bàn bên dưới)</option>
+              <option value="takeaway">Mang đi / Tự đến lấy</option>
+              <option value="delivery">Giao hàng tận nơi</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width" id="orderAddressGroup">
+            <label id="orderAddressLabel"><i class="fa-solid fa-chair"></i> Số bàn tại quán *</label>
+            <input type="text" id="orderAddress" placeholder="Ví dụ: Bàn 08 (Khu máy lạnh tầng 1)" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label><i class="fa-solid fa-credit-card"></i> Phương thức thanh toán</label>
+            <select id="orderPaymentMethod">
+              <option value="Tiền mặt">Thanh toán tiền mặt khi nhận</option>
+              <option value="Chuyển khoản QR">Chuyển khoản ngân hàng qua VietQR</option>
+              <option value="Ví MoMo">Ví điện tử MoMo</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label><i class="fa-solid fa-comment-dots"></i> Ghi chú cho quán</label>
+            <input type="text" id="orderNote" placeholder="Ví dụ: Ít đá, lấy thêm ống hút giấy...">
+          </div>
+        </div>
+
+        <div class="checkout-footer">
+          <div class="checkout-total-bill">
+            <span>Tổng thanh toán:</span>
+            <strong id="checkoutFinalTotal">0đ</strong>
+          </div>
+          <button type="submit" class="btn btn-primary" style="padding: 13px 26px;">
+            <i class="fa-solid fa-circle-check"></i> Hoàn Tất Đặt Món
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= 14. NÚT NỔI (FLOATING BUTTONS) ================= -->
+  <!-- Nút giỏ hàng nổi -->
+  <button class="floating-btn floating-cart-btn" onclick="openCart()" aria-label="Mở giỏ hàng">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span class="floating-badge" id="floatingCartBadge">0</span>
+  </button>
+
+  <!-- Nút cuộn lên đầu trang -->
+  <button class="floating-btn back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ================= 15. THÔNG BÁO TOAST ================= -->
+  <div class="toast-notice" id="toastNotice">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Thông báo ở đây!</span>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
