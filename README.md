@@ -89,14 +89,16 @@ Trang web được thiết kế theo cấu trúc landing page chuẩn SEO, thân
 ```text
 Thiet-ke-web_xay-dung-ui-web-cafe/
 │
-├── index.html                  # Trang giao diện chính
+├── Cafe-guest.html             # Trang giao diện chính dành cho khách
+├── cafe-guest-order.html       # Trang hiển thị danh sách khách hàng order đồ
 ├── README.md                   # Tài liệu dự án
 │
 ├── css/
-│   └── style.css               # CSS định dạng giao diện, tối ưu & hỗ trợ Dark Mode
+│   └── style.css               # CSS định dạng giao diện dùng chung & hỗ trợ Dark Mode
 │
 ├── js/
-│   └── main.js                 # Xử lý logic nghiệp vụ: Giỏ hàng, Modal, Theme, Search
+│   ├── main.js                 # Xử lý logic trang Cafe-guest.html: Giỏ hàng, Modal, Theme, Search
+│   └── orders.js               # Xử lý hiển thị & lọc đơn hàng trên cafe-guest-order.html
 │
 └── assets/
     └── images/                 # Kho hình ảnh tài nguyên cục bộ
@@ -126,8 +128,8 @@ Thiet-ke-web_xay-dung-ui-web-cafe/
 ## 🚀 4. Hướng dẫn chạy thử nghiệm
 
 1. **Cách 1: Mở trực tiếp bằng trình duyệt**
-   - Click đúp chuột vào file [index.html](file:///c:/Users/Asus/Desktop/TK%20WEB/BT%20lon/Thiet-ke-web_xay-dung-ui-web-cafe/index.html) để mở trên trình duyệt bất kỳ (Chrome, Edge, Firefox, Cốc Cốc,...).
+   - Click đúp chuột vào file [Cafe-guest.html](file:///c:/Users/Asus/Desktop/TK%20WEB/BT%20lon/Thiet-ke-web_xay-dung-ui-web-cafe/Cafe-guest.html) để mở trang chính, hoặc [cafe-guest-order.html](file:///c:/Users/Asus/Desktop/TK%20WEB/BT%20lon/Thiet-ke-web_xay-dung-ui-web-cafe/cafe-guest-order.html) để xem danh sách đơn hàng.
 
 2. **Cách 2: Sử dụng Live Server**
    - Mở thư mục dự án trong VS Code / Antigravity IDE.
-   - Chuột phải vào file `index.html` và chọn **Open with Live Server**.
+   - Chuột phải vào file `Cafe-guest.html` và chọn **Open with Live Server**.

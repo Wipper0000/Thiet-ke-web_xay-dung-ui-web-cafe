@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Order - Aura Coffee & Bistro</title>
+  <meta name="description" content="Theo dõi và quản lý danh sách đơn hàng khách đặt đồ tại Aura Coffee & Bistro.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Shared Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= 1. HEADER & NAVIGATION ================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="Cafe-guest.html" class="logo">
+        <i class="fa-solid fa-mug-hot"></i> Aura Coffee
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="Cafe-guest.html#home">Trang chủ</a></li>
+          <li><a href="Cafe-guest.html#menu">Thực đơn</a></li>
+          <li><a href="Cafe-guest.html#reservation">Đặt bàn</a></li>
+          <li><a href="cafe-guest-order.html" class="active">Danh sách Order</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện" title="Đổi giao diện Sáng / Tối">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="Cafe-guest.html#menu" class="btn btn-primary header-btn">
+          <i class="fa-solid fa-plus"></i> Đặt Món Mới
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. PAGE BANNER ================= -->
+  <section class="order-page-header">
+    <div class="container">
+      <span class="section-subtitle">Quản Lý & Theo Dõi</span>
+      <h1 class="section-title">Danh Sách Khách Order Đồ</h1>
+      <p class="section-desc">
+        Hiển thị toàn bộ đơn đặt nước và bánh của khách hàng từ trang thực đơn theo thời gian thực.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 3. ORDER DASHBOARD & LIST ================= -->
+  <main class="order-dashboard">
+    <div class="container">
+
+      <!-- Khối thống kê nhanh -->
+      <div class="order-stats-grid">
+        <div class="order-stat-card">
+          <div class="order-stat-icon"><i class="fa-solid fa-receipt"></i></div>
+          <div class="order-stat-info">
+            <span>Tổng số đơn</span>
+            <strong id="statTotalOrders">0</strong>
+          </div>
+        </div>
+
+        <div class="order-stat-card">
+          <div class="order-stat-icon"><i class="fa-solid fa-fire-burner"></i></div>
+          <div class="order-stat-info">
+            <span>Đang chờ / Pha chế</span>
+            <strong id="statPendingOrders">0</strong>
+          </div>
+        </div>
+
+        <div class="order-stat-card">
+          <div class="order-stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="order-stat-info">
+            <span>Đã hoàn thành</span>
+            <strong id="statCompletedOrders">0</strong>
+          </div>
+        </div>
+
+        <div class="order-stat-card">
+          <div class="order-stat-icon"><i class="fa-solid fa-coins"></i></div>
+          <div class="order-stat-info">
+            <span>Tổng doanh thu</span>
+            <strong id="statTotalRevenue">0đ</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thanh tìm kiếm & Lọc trạng thái -->
+      <div class="order-toolbar">
+        <div class="menu-search-box" style="margin: 0;">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="orderSearch" placeholder="Tìm theo mã đơn, tên khách hoặc SĐT..." autocomplete="off">
+          <button id="clearOrderSearch" class="clear-search-btn" title="Xóa tìm kiếm"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="menu-filter">
+          <button class="filter-btn active" data-status="all">Tất Cả</button>
+          <button class="filter-btn" data-status="pending">Chờ Xác Nhận</button>
+          <button class="filter-btn" data-status="preparing">Đang Pha Chế</button>
+          <button class="filter-btn" data-status="completed">Hoàn Thành</button>
+        </div>
+
+        <button class="btn btn-outline-dark" onclick="resetSampleOrders()" title="Nạp lại dữ liệu mẫu">
+          <i class="fa-solid fa-rotate-right"></i> Dữ Liệu Mẫu
+        </button>
+      </div>
+
+      <!-- Danh sách thẻ đơn hàng -->
+      <div class="order-list-grid" id="orderListGrid">
+        <!-- Render tự động bởi js/orders.js -->
+      </div>
+
+      <!-- Trạng thái trống -->
+      <div id="emptyOrderState" class="no-results" style="display: none;">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <h3>Chưa có đơn hàng nào phù hợp</h3>
+        <p style="margin-bottom: 20px;">Hãy quay lại trang thực đơn để tạo đơn đặt món mới hoặc đổi bộ lọc.</p>
+        <a href="Cafe-guest.html#menu" class="btn btn-primary">
+          <i class="fa-solid fa-arrow-left"></i> Quay Lại Đặt Món
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= 4. FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 Aura Coffee & Bistro. <a href="Cafe-guest.html" style="color: var(--accent-gold); text-decoration: underline;">Quay về trang giới thiệu</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= 5. THÔNG BÁO TOAST ================= -->
+  <div class="toast-notice" id="toastNotice">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Thông báo</span>
+  </div>
+
+  <!-- Order Page JavaScript -->
+  <script src="js/orders.js"></script>
+</body>
+</html>
+

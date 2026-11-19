@@ -613,12 +613,38 @@ function handleCheckoutSubmit(e) {
 
   const name = document.getElementById('orderCustomerName').value.trim();
   const phone = document.getElementById('orderCustomerPhone').value.trim();
+  const serviceType = document.getElementById('orderServiceType').value;
   const address = document.getElementById('orderAddress').value.trim();
   const payment = document.getElementById('orderPaymentMethod').value;
+  const note = document.getElementById('orderNote').value.trim();
   const orderId = 'AC-' + Math.floor(1000 + Math.random() * 9000);
+
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const discountVal = appliedDiscount > 0 ? (subtotal * appliedDiscount) / 100 : 0;
+  const finalTotal = Math.max(0, subtotal - discountVal);
+
+  // Lưu đơn hàng vào localStorage để trang cafe-guest-order.html hiển thị
+  const orders = JSON.parse(localStorage.getItem('aura_orders') || '[]');
+  orders.unshift({
+    id: orderId,
+    customerName: name,
+    customerPhone: phone,
+    serviceType: serviceType,
+    address: address,
+    payment: payment,
+    note: note,
+    items: [...cart],
+    total: finalTotal,
+    status: 'pending', // pending | preparing | completed
+    createdAt: new Date().toLocaleString('vi-VN', {
+      hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric'
+    })
+  });
+  localStorage.setItem('aura_orders', JSON.stringify(orders));
 
   closeCheckoutModal();
   cart = [];
+  appliedDiscount = 0;
   saveCart();
   document.getElementById('checkoutForm').reset();
 
