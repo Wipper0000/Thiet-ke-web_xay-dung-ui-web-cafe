@@ -94,6 +94,7 @@ Thiet-ke-web_xay-dung-ui-web-cafe/
 ├── cafe-guest-order.html       # Trang hiển thị danh sách khách hàng order đồ
 ├── README.md                   # Tài liệu dự án
 ├── AI_LOG.md                   # Nhật ký khai báo sử dụng công cụ AI minh bạch
+├── RELEASE_NOTE.md             # Ghi chú phát hành phiên bản v1.0.0
 ├── .nojekyll                   # Vô hiệu hóa Jekyll để GitHub Pages tải nhanh mã tĩnh
 │
 ├── css/
