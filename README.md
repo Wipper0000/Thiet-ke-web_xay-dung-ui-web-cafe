@@ -89,9 +89,12 @@ Trang web được thiết kế theo cấu trúc landing page chuẩn SEO, thân
 ```text
 Thiet-ke-web_xay-dung-ui-web-cafe/
 │
+├── index.html                  # Điểm khởi động điều hướng tự động cho GitHub Pages
 ├── Cafe-guest.html             # Trang giao diện chính dành cho khách
 ├── cafe-guest-order.html       # Trang hiển thị danh sách khách hàng order đồ
 ├── README.md                   # Tài liệu dự án
+├── AI_LOG.md                   # Nhật ký khai báo sử dụng công cụ AI minh bạch
+├── .nojekyll                   # Vô hiệu hóa Jekyll để GitHub Pages tải nhanh mã tĩnh
 │
 ├── css/
 │   └── style.css               # CSS định dạng giao diện dùng chung & hỗ trợ Dark Mode
